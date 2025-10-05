@@ -1,55 +1,100 @@
-* { 
+* {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
-html { 
-    
-    background: linear-gradient(to bottom, #99ff66 0%, #66ccff 100%);
+html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
 }
 
-hr { 
-    height: 5px;
-    background-color: aquamarine;
-}
-
-h1 { 
-    text-align: center;
-    color: linear-gradient(to bottom, #cc0066 0%, #663300 100%);
-    height: 50px;
-    font-size: 50px;
-    padding: 35px;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 #container {
-    position: relative;
-    width: 300px;
-    border: 3px solid #666666;
-    margin: 30px auto; 
-    border-radius: 5px;
-    background-color: #e1e1e1;
+    width: 320px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-input[type=text]{
-    position: relative;
-    display: block;
-    width: 90%;
-    margin: 12px auto 0px auto;
-    font-size: 20px;
-    background-color: white;
-    
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.output {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 28px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 input[type=button] {
-    position: relative;
-    background-color: linear-gradient(to bottom, #cc0066 0%, #00cc66 100%);
-    width: 20%;
-    margin: 2%;
-    font-size: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 10%;
+    border-radius: 5px;
+    border: none;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-input[type=button]:hover{
-    background-color:linear-gradient(to bottom, #cc0066 0%, #00cc66 100%);
+input[type=button]:hover {
+    background-color: #d5d5d5;
+}
 
+input[type=button]:active {
+    background-color: #ccc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type=button][value=" = "] {
+    grid-column: span 2;
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type=button][value=" = "]:hover {
+    background-color: #45a049;
+}
+
+input[type=button][value=" c "] {
+    background-color: #f44336;
+    color: white;
+}
+
+input[type=button][value=" c "]:hover {
+    background-color: #e53935;
+}
+
+@media (max-width: 360px) {
+    #container {
+        width: 100%;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+}
